@@ -206,7 +206,7 @@ class _SalesScreenViewState
             ),
             Expanded(
               child: ListView.builder(
-                itemCount: 10,
+                itemCount: 5,
                 itemBuilder: (context, index) {
                   return const Invoices();
                 },

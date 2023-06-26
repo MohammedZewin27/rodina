@@ -27,7 +27,7 @@ class MyThemeData {
 
       textTheme: const TextTheme(
         bodyLarge: TextStyle( fontSize: 35,fontFamily: 'master'),
-        bodyMedium: TextStyle(fontSize: 25, fontFamily: 'master2'),
+        bodyMedium: TextStyle(fontSize: 25, fontFamily: 'master2',fontWeight: FontWeight.bold),
        headlineLarge: TextStyle(fontSize: 15, fontFamily: 'master2'),
         bodySmall: TextStyle(fontSize: 15, color: Colors.black,fontFamily: 'master2'),
         titleSmall: TextStyle(fontSize: 15, color: Colors.black,fontFamily: 'master2')
