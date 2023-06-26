@@ -1,14 +1,16 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:rodinasales/category/categoryData.dart';
 
 import '../style/colors.dart';
 
 class CategoryItems extends StatelessWidget {
-final CategoryData categoryData;
-final int index;
+  final CategoryData categoryData;
+  final int index;
 
 
-const CategoryItems(this.categoryData, this.index, {super.key});
+  const CategoryItems(this.categoryData, this.index, {super.key});
 
 
   @override
@@ -52,7 +54,15 @@ const CategoryItems(this.categoryData, this.index, {super.key});
           Text(
             categoryData.name,
             style: TextStyle(
-                fontSize: MediaQuery.of(context).size.width*.012, fontWeight: FontWeight.bold, color: Colors.white),
+                fontSize: Platform.isWindows ? MediaQuery
+                    .of(context)
+                    .size
+                    .width * .012:MediaQuery
+                    .of(context)
+                    .size
+                    .width * .05,
+                fontWeight: FontWeight.bold,
+                color: Colors.white),
           ),
           SizedBox(height: 3,)
         ],

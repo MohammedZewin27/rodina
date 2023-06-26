@@ -25,24 +25,24 @@ class HomeLayoutScreen extends StatelessWidget {
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: AppBar(
-             backgroundColor: Colors.transparent,
-            title: const Text(
-              'RodinaKids',
-              style: TextStyle(fontFamily: 'master'),
-            ),
-            elevation: 10,
+            backgroundColor: Colors.transparent,
+            elevation: 0,
           ),
           floatingActionButton: SizedBox(
-            width: MediaQuery.of(context).size.width*.12,
+            width: Platform.isWindows
+                ? MediaQuery.of(context).size.width * .12
+                : MediaQuery.of(context).size.width * .2,
             child: FloatingActionButton(
               onPressed: () {},
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                   Icon(Icons.add,size: MediaQuery.of(context).size.width*.03,color: Shadowcont,),
-                  Text(
-                    'فاتورة',
-                    style: Theme.of(context).textTheme.headlineLarge,
+                  Icon(
+                    Icons.add,
+                    size: Platform.isWindows
+                        ? MediaQuery.of(context).size.width * .03
+                        : MediaQuery.of(context).size.width * .08,
+                    color: Shadowcont,
                   ),
                 ],
               ),
@@ -52,7 +52,6 @@ class HomeLayoutScreen extends StatelessWidget {
             padding: const EdgeInsets.all(16.0),
             child: Column(
               children: [
-
                 Expanded(
                   child: GridView.builder(
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -68,7 +67,8 @@ class HomeLayoutScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(8),
                           mouseCursor: MouseCursor.uncontrolled,
                           onTap: () {
-                            Navigator.pushNamed(context, SalesScreenView.routeName);
+                            Navigator.pushNamed(
+                                context, SalesScreenView.routeName);
                           },
                           child: CategoryItems(category[index], index));
                     },
